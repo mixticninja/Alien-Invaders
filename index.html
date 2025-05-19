@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="orientation" content="portrait">
+    <title>AI - Alien Invaders</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+</head>
+<body>
+
+    <div id="welcomeScreen" class="screen">
+        <h1 id="gameTitle">Alien Invaders</h1>
+        <button id="startButton">Start Game</button>
+        <button id="soundButton"><i class="fas fa-volume-up"></i> Sound Off</button>
+        <div id="introTextContainer">
+            <p id="introText"><b>Alien forces </b></br></br>
+                have stolen the world AI resources.</br></br>
+                Your mission is to lead the last</br></br> defenses against the landing </br></br>
+                army and recover essential</br></br>
+                resources back to humanity. </br></br> Thanks to your sacrifice,</br></br>
+                 we believe man kind to enjoy prompting </br></br><b> until the end of the world !</b></p>
+        </div>
+        <div id="cardCarousel">
+            <div class="card">
+                <img src="./assets/img/comp/invader2.png" alt="Enemy 1">
+                <p>Alien Soldier : Life goal is to kill you !</p>
+            </div>
+            <div class="card">
+                <img src="./assets/img/comp/flyingalien.png" alt="Enemy 2">
+                <p>Kamikaze : did you know his Life goal is to kill you ?</p>
+            </div>
+            <div class="card">
+                <img src="./assets/img/comp/shieldnuke.png" alt="caps 2">
+                <p>Shield and Nuke double tap-clic-space launch it</p>
+            </div>
+
+            <div class="card">
+                <img src="./assets/img/comp/bonusalien.png" alt="Enemy">
+                <p>Energy thieves, kill them to recover :</p>
+            </div>
+
+            <div class="card">
+                <img src="./assets/img/comp/nrjup.png" alt="caps 1">
+                <p>Energy power capsule, good for weapons speed</p>
+            </div>
+            <div class="card">
+                <img src="./assets/img/comp/bonusalien2.png" alt="Enemy 3">
+                <p>GPU thieves, kill them to recover</p>
+            </div>
+
+            <div class="card">
+                <img src="./assets/img/comp/gunlevelup.png" alt="caps 2">
+                <p>Gun strengh, increase weapons destructions</p>
+            </div>
+
+            <div class="card">
+                <img src="./assets/img/comp/GPUup.png" alt="caps 2">
+                <p>GPU power, good for weapons IA</p>
+            </div>
+            <div class="card">
+                <img src="./assets/img/comp/bonusalien3.png" alt="Enemy 3">
+                <p>Water thieves, kill them to recover</p>
+            </div>
+
+            <div class="card">
+                <img src="./assets/img/comp/waterup.png" alt="caps 3">
+                <p>Water container, protect your life !</p>
+            </div>
+            
+        </div>
+        <div class="footer-text">©2025 mixticstudio.online All rights reserved</div>
+    </div>
+    <div id="gameScreen" class="screen" style="display:none;">
+        <h2 id="gameScreenTitle">AI - Alien Invaders</h2>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <audio id="explosionSound" src="./assets/snd/explode.mp3"></audio>
+        <audio id="laserSound" src="./assets/snd/laser.mp3"></audio>
+        <audio id="playSound" src="./assets/snd/ambiance.mp3"></audio>
+        <audio id="overSound" src="./assets/snd/ending.mp3"></audio>
+        <audio id="introSound" src="./assets/snd/intro.mp3"></audio>
+        <audio id="playerExplodeSound" src="./assets/snd/smallkill.mp3"></audio>
+        <audio id="ufoSound" src="./assets/snd/boss.mp3"></audio>
+        <audio id="lifeUpSound" src="./assets/snd/ya.mp3"></audio>
+        <audio id="gunPowerUpSound" src="./assets/snd/bonus1.mp3"></audio>
+        <audio id="gunLevelUpSound" src="./assets/snd/bonus2.mp3"></audio>
+        <audio id="gpuUpSound" src="./assets/snd/bonus3.mp3"></audio>
+        <audio id="waterUpSound" src="./assets/snd/glouglou.mp3"></audio>
+        <audio id="newAlienSound" src="./assets/snd/newalien.mp3"></audio>
+        <audio id="killAlienSound" src="./assets/snd/bigboss.mp3"></audio>
+        <audio id="ufoExplodeSound" src="./assets/snd/ufoexplode.mp3"></audio>
+        <audio id="shieldWarnSound" src="./assets/snd/shieldwarn.mp3"></audio>
+        <audio id="nukeLaunchSound" src="./assets/snd/nukelaunch.mp3"></audio>
+        <audio id="nukedSound" src="./assets/snd/nukeexplode.mp3"></audio>
+        <audio id="nukeAckSound" src="./assets/snd/rock.mp3"></audio>
+        <audio id="shieldAckSound" src="./assets/snd/exclam.mp3"></audio>
+        <audio id="gameOverSound" src="./assets/snd/bigloose.mp3"></audio>
+        <div class="footer-text">©2025 mixticstudio.online All rights reserved</div>
+    </div>
+    <div id="gameOverScreen" class="screen " >
+        
+        <h2 id="gameScreenTitle">AI - Alien Invaders</h2>
+        <button id="soundButton2"><i class="fas fa-volume-up"></i> Sound Off</button>
+        <h1>Game Over</h1>
+        <div id="gameOverScoreInput">
+            <p id="highScoreMessage">Congratulations, new high score!</p>
+            <input type="text" id="nameInput" placeholder="Enter name xxx">
+            <button id="saveScoreBtn">Save</button>
+        </div>
+        <div id="gameOverScores">
+            <h2>Meilleurs Scores</h2>
+            <ol id="gameOverScoreList">
+                <!-- Les scores seront insérés ici par JavaScript -->
+            </ol>
+        </div>
+        <button id="restartButton">New Game</button>
+        <div class="footer-text">©2025 mixticstudio.online All rights reserved</div>
+    </div>
+    
+    <script src="globals.js"></script>
+    <script src="ui.js"></script>
+    <script src="events.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+}
+
+#gameScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Couleur de fond pour le mode plein écran */
+}
+
+#gameCanvas {
+    margin: 10px; /* Marge autour du canvas */
+    background-color: #000; /* Couleur de fond du canvas */
+}
+
+@media (max-width: 600px) {
+    #gameCanvas {
+        width: calc(100% - 20px); /* Largeur du canvas avec une marge de 10px de chaque côté */
+        height: calc(100% - 120px); /* Hauteur du canvas avec une marge de 10px de chaque côté */
+    }
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#gameScreenTitle {
+    font-size: 24px; /* Taille par défaut pour les écrans plus grands */
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    #gameScreenTitle {
+        font-size: 18px; /* Taille réduite pour les petits écrans */
+    }
+}
+
+@media (max-width: 400px) {
+    #gameScreenTitle {
+        display: none; /* Masquer le titre sur les petits écrans */
+    }
+}
+
+#welcomeScreen {
+    background-image: url('./assets/img/comp/fonda.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#scoreTxt {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
+    color: #ff5e00;
+}
+
+#gameTitle {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
+    color: #00ff00;
+    margin-top: -180px;
+    margin-left: 50px;
+}
+
+#gameScreenTitle {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
+    color: #00ff00;
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#startButton:hover {
+    background-color: #00ff00;
+}
+
+canvas {
+    border: 1px solid #fff;
+    background-color: #081c55;
+}
+
+#gameOverScreen {
+    background-image: url('./assets/img/comp/fondu.jpg');
+    background-size: cover;
+    background-position: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#gameOverScores {
+    margin: 20px 0;
+}
+
+#gameOverScoreList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#gameOverScoreList li {
+    margin: 5px 0;
+}
+
+#restartButton {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restartButton:hover {
+    background-color: #00ff00;
+}
+
+#gameOverScoreInput{
+    visibility: hidden;
+}
+
+#highScoreMessage {
+    color: #ff0;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#nameInput {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    z-index: 1000;
+    /* Ajout des propriétés pour mobile */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 80%;
+    max-width: 300px;
+    border: 2px solid #00ff00;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    border-radius: 5px;
+}
+
+#saveScoreBtn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Ajout des propriétés pour mobile */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+    min-width: 44px;
+    margin: 10px 0;
+}
+
+#saveScoreBtn:hover {
+    background-color: #00ff00;
+}
+
+#soundButton,#soundButton2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#soundButton,#soundButton2:hover {
+    background-color: #00ff00;
+}
+
+#lifeupImage, #gunlevelupImage, #GPUupImage, #bonusInvaderImage, #bonusInvader2Image {
+    display: none;
+}
+
+.bonus-sticker {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+.bonus-sticker img {
+    margin-right: 5px;
+}
+
+#introTextContainer {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+    margin: 20px auto;
+    text-align: justify center;
+}
+
+#introText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
+    animation: scrollText 20s linear infinite;
+}
+
+.footer-text {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 2px -2px 4px #000, -2px 2px 4px #000;
+    z-index: 1000;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+#cardCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    margin: 0 10px;
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    position: absolute;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #00ff00;
+    text-align: center;
+    margin: 0;
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card.left {
+    transform: translateX(-250px);
+}
+
+.card.right {
+    transform: translateX(250px);
+}
